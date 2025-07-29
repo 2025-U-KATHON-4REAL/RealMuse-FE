@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BottomBar = () => {
   return (
     <S.BarContainer>
-      <S.NavButton as={Link} to="/">
+      <S.NavButton as={Link} to="/home">
         홈
       </S.NavButton>
       <S.NavButton as={Link} to="/business">
