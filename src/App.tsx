@@ -5,6 +5,7 @@ import Home from "./home/Home";
 import BottomBar from "./bottom/BottomBar";
 import Business from "./business/Business";
 import Profile from "./profile/Profile";
+import Test from "./test/Test";
 
 function App() {
   return (
@@ -13,11 +14,15 @@ function App() {
       <div id="root">
         <div className="App">
           <Router>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/business" element={<Business />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
+            {/*스크롤 영역*/}
+            <div className="AppContent">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/business" element={<Business />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/test" element={<Test />} />
+              </Routes>
+            </div>
             <BottomBar />
           </Router>
         </div>

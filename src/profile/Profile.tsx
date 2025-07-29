@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile = () => {
+const Profile: React.FC = () => {
   return (
     <div style={{ padding: "20px" }}>
       <h1>마이페이지</h1>

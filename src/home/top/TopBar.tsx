@@ -1,7 +1,7 @@
 import * as S from "./topbar.style";
 import { Link } from "react-router-dom";
 
-const TopBar = () => {
+const TopBar: React.FC = () => {
   return (
     <S.BarContainer>
       <S.iconButton as={Link} to="/business">

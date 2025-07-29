@@ -23,11 +23,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .App {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    padding-bottom: 60px; /* 바텀바 높이만큼 콘텐츠 공간 확보 */
+    height:100%;
+    display: flex;
+    /*border & padding 포함한 전체 크기fh width, height 계산*/
     box-sizing: border-box;
+    flex-direction: column;
+  }
+
+  .AppContent{
+    flex:1;
+    overflow-y: auto;
+    padding-bottom:60px;
   }
 
 `;

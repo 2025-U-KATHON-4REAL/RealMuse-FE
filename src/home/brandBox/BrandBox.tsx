@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./brandBox.style";
 
-const BrandBox = () => {
+const BrandBox: React.FC = () => {
   return (
     <S.BrandBlock>
       <S.TopRow>
