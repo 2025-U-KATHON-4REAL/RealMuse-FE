@@ -4,19 +4,25 @@ import TestScreen1 from "./testScreen/TestScreen1";
 import TestScreen2 from "./testScreen/TestScreen2";
 import TestScreen3 from "./testScreen/TestScreen3";
 import TestResult from "./testScreen/TestResult";
+import TestProgress from "./TestProgress";
 
-const Test: React.FC = () => {
+interface TestProps {
+  onTestComplete: () => void;
+}
+
+const Test: React.FC<TestProps> = ({ onTestComplete }) => {
   const [step, setStep] = useState(1);
   const nextStep = () => setStep((prev) => prev + 1);
 
   const navigate = useNavigate();
   const handleComplete = () => {
-    navigate("/");
+    onTestComplete();
+    navigate("/home");
   };
 
   return (
     <div>
-      <p>{step} / 4</p> {/*진행상태 표시*/}
+      <TestProgress step={step} /> {/*진행상태 표시*/}
       {step === 1 && <TestScreen1 onNext={nextStep} />}
       {/*조건 && 컴포넌트 → 조건이 true일 때만 컴포넌트 렌더*/}
       {step === 2 && <TestScreen2 onNext={nextStep} />}

@@ -7,11 +7,12 @@ interface TestResultProps {
 
 const TestResult: React.FC<TestResultProps> = ({ onComplete }) => {
   return (
-    <div>
-      <h2>테스트 완료</h2>
-      <p>AI 매칭 결과가 여기에 표시됩니다.</p>
-      <S.CompleteButton onClick={onComplete}>홈으로 돌아가기</S.CompleteButton>
-    </div>
+    <S.TestScreenContainer>
+      <S.TextTitle>AI 매칭</S.TextTitle>
+      <S.CompleteButton onClick={onComplete}>
+        매칭결과 보러가기
+      </S.CompleteButton>
+    </S.TestScreenContainer>
   );
 };
 

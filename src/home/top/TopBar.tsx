@@ -1,15 +1,37 @@
 import * as S from "./topbar.style";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const TopBar: React.FC = () => {
+interface TopBarProps {
+  onSelectButtonType: (type: "RECOMMENDATIONS" | "REQUESTS") => void;
+}
+
+const TopBar: React.FC<TopBarProps> = ({ onSelectButtonType }) => {
+  const [selected, setSelected] = useState<"RECOMMENDATIONS" | "REQUESTS">(
+    "RECOMMENDATIONS"
+  );
+
+  const handleSelect = (type: "RECOMMENDATIONS" | "REQUESTS") => {
+    setSelected(type);
+    onSelectButtonType(type);
+  };
+
   return (
     <S.BarContainer>
-      <S.iconButton as={Link} to="/business">
-        비즈니스
-      </S.iconButton>
-      <S.iconButton as={Link} to="/profile">
-        프로필
-      </S.iconButton>
+      <S.AppLogoImg />
+      <S.ButtonGroup>
+        <S.Button
+          isSelected={selected === "RECOMMENDATIONS"}
+          onClick={() => handleSelect("RECOMMENDATIONS")}
+        >
+          매칭
+        </S.Button>
+        <S.Button
+          isSelected={selected === "REQUESTS"}
+          onClick={() => handleSelect("REQUESTS")}
+        >
+          요청
+        </S.Button>
+      </S.ButtonGroup>
     </S.BarContainer>
   );
 };

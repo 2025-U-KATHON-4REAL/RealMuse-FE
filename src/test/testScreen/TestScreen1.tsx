@@ -1,17 +1,41 @@
 import React from "react";
+import * as S from "../test.style";
 
 interface TestScreenProps {
   onNext: () => void;
 }
 
 const TestScreen1: React.FC<TestScreenProps> = ({ onNext }) => {
+  const startYear = 1920;
+  const endYear = new Date().getFullYear();
+
+  const years = [];
+  for (let y = endYear; y >= startYear; y--) {
+    years.push(y);
+  }
+
   return (
-    <div>
-      <h2>테스트 1단계</h2>
-      <p>본명, 성별, 나이 같은 기본 정보 입력 (임시로 간단히 텍스트로만)</p>
-      {/* 실제로는 입력 폼 넣으면 됨 */}
-      <button onClick={onNext}>다음</button>
-    </div>
+    <S.TestScreenContainer>
+      <S.TextTitle>기본 특성</S.TextTitle>
+      <S.inputBox type="text" placeholder="크리에이터 이름 입력" />
+      <S.selectBox>
+        <option value="">성별</option>
+        <option value="male">남성</option>
+        <option value="female">여성</option>
+      </S.selectBox>
+
+      <S.selectBox>
+        <option value="">나이</option>
+        {years.map((year) => (
+          <option key={year} value={year}>
+            {year}년생
+          </option>
+        ))}
+      </S.selectBox>
+
+      <S.uploadBox type="file" accept="image/*" />
+      <S.nextButton onClick={onNext}>다음</S.nextButton>
+    </S.TestScreenContainer>
   );
 };
 
