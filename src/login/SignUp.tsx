@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Radio } from "antd";
+import * as S from "./loginsignup.style";
 
 const SignUp = () => {
   const navigate = useNavigate();
 
   type Role = "CREATOR" | "BRAND";
 
-  /*const [role, setRole] = useState<Role | "">("");*/
   const [role, setRole] = useState<Role>("CREATOR");
   const [name, setName] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -16,7 +17,6 @@ const SignUp = () => {
 
   const handleNicknameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
-    setRole("CREATOR");
   };
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setPhoneNumber(e.target.value);
@@ -57,35 +57,61 @@ const SignUp = () => {
       });
   };
 
+  const goToLogin = (): void => {
+    navigate("/");
+  };
+
   return (
-    <div>
-      <div>회원가입하기</div>
-      <input
-        type="text"
-        placeholder="본명 입력"
-        value={name}
-        onChange={handleNicknameChange}
-      />
-      <input
-        type="tel"
-        placeholder="전화번호 입력"
-        value={phoneNumber}
-        onChange={handlePhoneNumberChange}
-      />
-      <input
-        type="email"
-        placeholder="이메일 입력"
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <input
-        type="password"
-        placeholder="비밀번호"
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <button onClick={handleSignUp}>회원가입</button>
-    </div>
+    <>
+      <S.HeaderContainer>
+        <S.BackIconImg onClick={goToLogin} />
+        <S.Header>회원가입하기</S.Header>
+      </S.HeaderContainer>
+      <S.ScreenContainer>
+        <Radio.Group
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "30px",
+            marginBottom: "32px",
+          }}
+        >
+          <Radio value="CREATOR" style={{ fontSize: "18px" }}>
+            크리에이터
+          </Radio>
+          <Radio value="BRAND" style={{ fontSize: "18px" }}>
+            기업
+          </Radio>
+        </Radio.Group>
+        <S.inputBox
+          type="text"
+          placeholder="본명 입력"
+          value={name}
+          onChange={handleNicknameChange}
+        />
+        <S.inputBox
+          type="tel"
+          placeholder="전화번호 입력"
+          value={phoneNumber}
+          onChange={handlePhoneNumberChange}
+        />
+        <S.inputBox
+          type="email"
+          placeholder="이메일 입력"
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <S.inputBox
+          type="password"
+          placeholder="비밀번호"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <S.MainButton onClick={handleSignUp}>회원가입</S.MainButton>
+      </S.ScreenContainer>
+    </>
   );
 };
 
