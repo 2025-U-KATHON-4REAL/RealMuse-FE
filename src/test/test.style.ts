@@ -9,7 +9,7 @@ export const TestScreenContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px; /*조정 필요*/
+  margin-bottom: 80px; /*조정 필요*/
 `;
 
 export const inputBox = styled.input`

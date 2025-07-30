@@ -10,6 +10,25 @@ interface TestProps {
   onTestComplete: () => void;
 }
 
+export interface TestFormData {
+  name: string;
+  gender: string;
+  birth: string;
+  profileImageUrl: string;
+  interestCategories: string[];
+  brandThemes: string[];
+  skinType: string;
+  skinTone: string;
+  makeupStyle: string[];
+  sns: string;
+  targetGender: string;
+  targetAgeGroup: string;
+  contentTypes: string[];
+  contentTopics: string[];
+  contentLength: string;
+  brandPreferences: string[];
+}
+
 const Test: React.FC<TestProps> = ({ onTestComplete }) => {
   const [step, setStep] = useState(1);
   const nextStep = () => setStep((prev) => prev + 1);
@@ -19,6 +38,28 @@ const Test: React.FC<TestProps> = ({ onTestComplete }) => {
     onTestComplete();
     navigate("/home");
   };
+
+  {
+    /*테스트 데이터 관리*/
+  }
+  const [testFormData, setTestFormData] = useState<TestFormData>({
+    name: "",
+    gender: "",
+    birth: "",
+    profileImageUrl: "",
+    interestCategories: [],
+    brandThemes: [],
+    skinType: "",
+    skinTone: "",
+    makeupStyle: [],
+    sns: "",
+    targetGender: "",
+    targetAgeGroup: "",
+    contentTypes: [],
+    contentTopics: [],
+    contentLength: "",
+    brandPreferences: [],
+  });
 
   return (
     <div>

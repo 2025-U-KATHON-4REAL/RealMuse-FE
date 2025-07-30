@@ -37,4 +37,5 @@ export const TestStartButton = styled.button`
   font-weight: 450px;
   border: none;
   border-radius: 15px;
+  cursor: pointer;
 `;

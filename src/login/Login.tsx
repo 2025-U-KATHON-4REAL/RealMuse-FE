@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import * as S from "./loginsignup.style";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,23 +45,25 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div>로그인하기</div>
-      <input
-        type="email"
-        placeholder="이메일 입력"
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <input
-        type="password"
-        placeholder="비밀번호"
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <button onClick={handleLogin}>로그인</button>
-      <p onClick={goToSignUp}>회원가입</p>
-    </div>
+    <>
+      <S.ScreenContainer>
+        <S.AppLogoImg />
+        <S.inputBox
+          type="email"
+          placeholder="이메일 입력"
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <S.inputBox
+          type="password"
+          placeholder="비밀번호"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <S.MainButton onClick={handleLogin}>로그인</S.MainButton>
+        <S.ToGoSignUp onClick={goToSignUp}>회원가입</S.ToGoSignUp>
+      </S.ScreenContainer>
+    </>
   );
 };
 

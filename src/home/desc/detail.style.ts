@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import BackIconButton from "../../assets/BackIconButton.png";
 
-export const BrandBlock = styled.div`
+export const DetailContainer = styled.div`
   margin: 0 16px;
-  margin-bottom: 20px;
-  padding: 18px 12px;
-  border-radius: 12px;
-  background: #f3f4f8;
+  margin-top: 15px;
+  background: linear-gradient(#f3f4f8, #ffe3ee);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 22px;
 `;
 
 export const BrandLogoRow = styled.div`
@@ -46,11 +49,19 @@ export const MatchingRate = styled.span`
   font-weight: 450;
 `;
 
-export const Description = styled.p`
+export const Keywords = styled.p`
   margin-top: 0;
   margin-right: 10px;
   font-size: 13px;
   color: #5b5d6b;
+`;
+
+export const Description = styled.p`
+  margin: 24px 0; /*조정 필요*/
+  margin-right: 10px;
+  font-size: 13px;
+  color: #5b5d6b;
+  white-space: pre-line;
 `;
 
 export const ButtonRow = styled.div`
@@ -66,7 +77,11 @@ export const LikeButton = styled.button`
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  flex: 1;
+`;
+
+export const SuggestButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
 `;
 
 export const SuggestButton = styled.button`
@@ -76,5 +91,29 @@ export const SuggestButton = styled.button`
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  flex: 4;
+  flex: 1;
+`;
+
+export const BackIconImg = styled.div`
+  background-image: url(${BackIconButton});
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  margin-top: 105px;
+  margin-left: 16px;
+`;
+
+/*요청 텍스트창*/
+export const Message = styled.textarea`
+  background: white;
+  margin-bottom: 24px; /*조정 필요*/
+  border: none;
+  border-radius: 10px;
+  min-height: 100px;
+  font-size: 16px;
+  padding: 14px 12px;
+  resize: vertical; /* 세로 크기 조절 가능 */
+  vertical-align: top; /* 텍스트 상단 정렬 */
 `;
