@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BrandBox from "../brandBox/BrandBox";
-import * as S from "./brandList.style";
+import * as S from "./brandlist.style";
 import { dummyBrands } from "../../data/brandDummy";
 
 interface Brand {
