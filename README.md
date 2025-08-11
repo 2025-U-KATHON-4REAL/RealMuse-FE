@@ -63,7 +63,7 @@
 
 <details>
 
-```plaintext
+````plaintext
 📦src
 ┣ 📂assets
 ┃ ┣ 📂icons
@@ -127,7 +127,7 @@
 ┣ 📜logo.svg
 ┣ 📜reportWebVitals.js
 ┗ 📜setupTests.js
-</details>
+</details>```
 
 ### API 연동
 
@@ -153,4 +153,4 @@
 ![회원가입 & 로그인 후 홈 화면 진입](assets/ReadMe/화면구현2.png)
 ![매칭률 검사 진행 후 홈 반영](assets/ReadMe/화면구현3.png)
 ![매칭/요청 브랜드 리스트](assets/ReadMe/화면구현4.png)
-```
+````
