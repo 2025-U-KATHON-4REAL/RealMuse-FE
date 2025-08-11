@@ -2,6 +2,8 @@
 
 ### 1인 마이크로 뷰티 크리에이터와 뷰티 브랜드 매칭 플랫폼
 
+![로고](assets/AppLogo.png)
+
 ---
 
 ## 문제 인식
@@ -79,10 +81,10 @@
 
 ### 화면 구현
 
-![RealMuse Vercel 배포](assets/ReadMe/화면구현1.png)
-![회원가입 & 로그인 후 홈 화면 진입](assets/ReadMe/화면구현2.png)
-![매칭률 검사 진행 후 홈 반영](assets/ReadMe/화면구현3.png)
-![매칭/요청 브랜드 리스트](assets/ReadMe/화면구현4.png)
+![RealMuse Vercel 배포](assets/ReadME/화면구현1.png)
+![회원가입 & 로그인 후 홈 화면 진입](assets/ReadME/화면구현2.png)
+![매칭률 검사 진행 후 홈 반영](assets/ReadME/화면구현3.png)
+![매칭/요청 브랜드 리스트](assets/ReadME/화면구현4.png)
 
 ### 폴더 구조
 
