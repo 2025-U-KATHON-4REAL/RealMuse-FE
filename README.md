@@ -40,7 +40,7 @@
 
 ## 사용 기술
 
-1. 프론트엔드
+### 프론트엔드
 
 - 프레임워크: REACT
 - 언어: TypeScript
@@ -49,7 +49,7 @@
 - API 통신: Axios, Fetch API
 - 배포: GitHub 연동 Vercel을 이용한 자동 배포
 
-2. 백엔드
+### 백엔드
 
 - 프레임워크: Spring Boot
 - 언어: Java
@@ -59,34 +59,47 @@
 
 ---
 
-## 프론트엔드
+## API 연동 완료
 
-### API 연동
-
-1. 로그인/회원가입
+### 로그인/회원가입
 
 - POST https://team4real.r-e.kr/auth/login
 - POST https://team4real.r-e.kr/auth/signup
 
-2. 상단바 탭 별 브랜드 리스트 (홈화면)
+### 상단바 탭 별 브랜드 리스트 (홈화면)
 
 - 사용자가 선택한 상단바 탭(추천 매칭/받은 요청)에 따라 if문으로 각각의 API 호출
 - GET https://team4real.r-e.kr/creators/matchings/recommendations
 - GET https://team4real.r-e.kr/creators/matchings/requests
 
-3. 테스트 진행 및 결과
+### 테스트 진행 및 결과
 
 - POST https://team4real.r-e.kr/creators/analysis
 - GET https://team4real.r-e.kr/creators/analysis
 
-### 화면 구현
+---
+
+## 화면 구현
+
+### RealMuse Vercel 배포
 
 ![RealMuse Vercel 배포](src/assets/ReadME/화면구현1.png)
+
+### 회원가입 & 로그인 후 홈 화면 진입
+
 ![회원가입 & 로그인 후 홈 화면 진입](src/assets/ReadME/화면구현2.png)
+
+### 매칭률 검사 진행 후 홈 반영
+
 ![매칭률 검사 진행 후 홈 반영](src/assets/ReadME/화면구현3.png)
+
+### 매칭/요청 브랜드 리스트
+
 ![매칭/요청 브랜드 리스트](src/assets/ReadME/화면구현4.png)
 
-### 폴더 구조
+---
+
+## 폴더 구조
 
 <details>
   <summary>폴더 구조 보기</summary>
