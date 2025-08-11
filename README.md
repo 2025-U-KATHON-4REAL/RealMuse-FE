@@ -59,11 +59,37 @@
 
 ## 프론트엔드
 
+### API 연동
+
+1. 로그인/회원가입
+
+- POST https://team4real.r-e.kr/auth/login
+- POST https://team4real.r-e.kr/auth/signup
+
+2. 상단바 탭 별 브랜드 리스트 (홈화면)
+
+- 사용자가 선택한 상단바 탭(추천 매칭/받은 요청)에 따라 if문으로 각각의 API 호출
+- GET https://team4real.r-e.kr/creators/matchings/recommendations
+- GET https://team4real.r-e.kr/creators/matchings/requests
+
+3. 테스트 진행 및 결과
+
+- POST https://team4real.r-e.kr/creators/analysis
+- GET https://team4real.r-e.kr/creators/analysis
+
+### 화면 구현
+
+![RealMuse Vercel 배포](assets/ReadMe/화면구현1.png)
+![회원가입 & 로그인 후 홈 화면 진입](assets/ReadMe/화면구현2.png)
+![매칭률 검사 진행 후 홈 반영](assets/ReadMe/화면구현3.png)
+![매칭/요청 브랜드 리스트](assets/ReadMe/화면구현4.png)
+
 ### 폴더 구조
 
 <details>
+  <summary>폴더 구조 보기</summary>
 
-````plaintext
+```plaintext
 📦src
 ┣ 📂assets
 ┃ ┣ 📂icons
@@ -127,30 +153,5 @@
 ┣ 📜logo.svg
 ┣ 📜reportWebVitals.js
 ┗ 📜setupTests.js
-</details>```
-
-### API 연동
-
-1. 로그인/회원가입
-
-- POST https://team4real.r-e.kr/auth/login
-- POST https://team4real.r-e.kr/auth/signup
-
-2. 상단바 탭 별 브랜드 리스트 (홈화면)
-
-- 사용자가 선택한 상단바 탭(추천 매칭/받은 요청)에 따라 if문으로 각각의 API 호출
-- GET https://team4real.r-e.kr/creators/matchings/recommendations
-- GET https://team4real.r-e.kr/creators/matchings/requests
-
-3. 테스트 진행 및 결과
-
-- POST https://team4real.r-e.kr/creators/analysis
-- GET https://team4real.r-e.kr/creators/analysis
-
-### 화면 구현
-
-![RealMuse Vercel 배포](assets/ReadMe/화면구현1.png)
-![회원가입 & 로그인 후 홈 화면 진입](assets/ReadMe/화면구현2.png)
-![매칭률 검사 진행 후 홈 반영](assets/ReadMe/화면구현3.png)
-![매칭/요청 브랜드 리스트](assets/ReadMe/화면구현4.png)
-````
+</details>
+```
