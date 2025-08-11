@@ -28,7 +28,7 @@ const SignUp = () => {
   const handleSignUp = () => {
     axios
       .post(
-        `https://team4real.r-e.kr/auth/signup`,
+        `${process.env.REACT_APP_BACKEND_URL}/auth/signup`,
         {
           role,
           name,

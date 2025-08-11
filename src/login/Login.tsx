@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = () => {
     axios
-      .post(`https://team4real.r-e.kr/auth/login`, {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
         email,
         password,
       })

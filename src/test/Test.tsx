@@ -77,7 +77,7 @@ const Test: React.FC<TestProps> = ({ onTestComplete }) => {
       // POST 요청: 사용자 입력 데이터 전송
       const token = localStorage.getItem("accessToken");
       const postResponse = await fetch(
-        "https://team4real.r-e.kr/creators/analysis",
+        `${process.env.REACT_APP_BACKEND_URL}/creators/analysis`,
         {
           method: "POST",
           headers: {
@@ -94,7 +94,7 @@ const Test: React.FC<TestProps> = ({ onTestComplete }) => {
 
       // GET 요청: 결과 받아오기
       const getResponse = await fetch(
-        "https://team4real.r-e.kr/creators/analysis",
+        `${process.env.REACT_APP_BACKEND_URL}/creators/analysis`,
         {
           method: "GET",
           headers: {
