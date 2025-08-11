@@ -6,7 +6,7 @@ import { dummyBrands } from "../../data/brandDummy";
 
 interface Brand {
   matchingId: number;
-  brandID: number;
+  brandId: number;
   name: string;
   image: string;
   matchScore: number;
@@ -35,24 +35,21 @@ const BrandList: React.FC<BrandList> = ({ topBarButtonType }) => {
 
       try {
         const token = localStorage.getItem("accessToken");
-        const response = await axios.get<Brand[]>(url, {
+
+        const response = await axios.get(url, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        /* 실제 api 연동
-        if (Array.isArray(response.data)) {
-          setBrands(response.data);
-        } else if (response.data) {
-          setBrands([response.data]);
-        } else {
-          alert("API 응답 데이터:\n" + JSON.stringify(response.data, null, 2));
-          setBrands([]);
-        }*/
-
-        const apiData = Array.isArray(response.data)
-          ? response.data
-          : [response.data];
+        const apiData = Array.isArray(response.data.items)
+          ? response.data.items
+          : [];
         const combinedData = [...apiData, ...dummyBrands];
+
+        {
+          /* 데이터 확인 */
+        }
+        console.log(JSON.stringify(response.data, null, 2));
+        alert("API 응답 데이터:\n" + JSON.stringify(response.data, null, 2));
 
         setBrands(combinedData);
       } catch (error) {
@@ -67,14 +64,12 @@ const BrandList: React.FC<BrandList> = ({ topBarButtonType }) => {
 
   return (
     <S.BrandListContainer>
-      <text style={{ marginLeft: "20px", fontWeight: "450" }}>
-        브랜드 리스트
-      </text>
+      <div style={{ marginLeft: "20px", fontWeight: "450" }}>브랜드 리스트</div>
       <S.BrandBoxContainer>
         <div>
           {brands.map((brand) => (
             <BrandBox
-              key={brand.brandID}
+              key={brand.brandId}
               brand={brand}
               topBarButtonType={topBarButtonType}
             />

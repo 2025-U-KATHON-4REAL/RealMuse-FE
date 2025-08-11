@@ -1,7 +1,7 @@
 export const dummyBrands = [
   {
     matchingId: 1,
-    brandID: 101,
+    brandId: 101,
     name: "샘플 브랜드",
     image: "https://via.placeholder.com/100",
     matchScore: 87,
@@ -13,7 +13,7 @@ export const dummyBrands = [
   },
   {
     matchingId: 2,
-    brandID: 102,
+    brandId: 102,
     name: "그린 코스메틱",
     image: "https://via.placeholder.com/100?text=Green+Cosmetic",
     matchScore: 75,
@@ -25,7 +25,7 @@ export const dummyBrands = [
   },
   {
     matchingId: 3,
-    brandID: 103,
+    brandId: 103,
     name: "퓨처 패션",
     image: "https://via.placeholder.com/100?text=Future+Fashion",
     matchScore: 92,
@@ -37,7 +37,7 @@ export const dummyBrands = [
   },
   {
     matchingId: 4,
-    brandID: 104,
+    brandId: 104,
     name: "오가닉 라이프",
     image: "https://via.placeholder.com/100?text=Organic+Life",
     matchScore: 68,

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 interface BrandBoxProps {
   brand: {
     matchingId: number;
-    brandID: number;
+    brandId: number;
     name: string;
     image: string;
     matchScore: number;
@@ -22,12 +22,12 @@ const BrandBox: React.FC<BrandBoxProps> = ({ brand, topBarButtonType }) => {
 
   const handleSuggestClick = () => {
     if (topBarButtonType === "RECOMMENDATIONS") {
-      navigate(`/home/${brand.brandID}`, { state: { brand } });
+      navigate(`/home/${brand.brandId}`, { state: { brand } });
     }
   };
   const handleRequestClick = () => {
     if (topBarButtonType === "REQUESTS") {
-      navigate(`/home/request/${brand.brandID}`, { state: { brand } });
+      navigate(`/home/request/${brand.brandId}`, { state: { brand } });
     }
   };
 
