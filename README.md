@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# RealMuse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1인 마이크로 뷰티 크리에이터와 뷰티 브랜드 매칭 플랫폼
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 문제 인식
 
-### `npm start`
+### 마이크로 인플루언서의 성장 한계
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 대형 기획사 소속이 아닌 크리에이터는 브랜드와 직접 협업할 접점이 부족함
+- 채널 특성에 맞는 브랜드를 찾기 어려워, 비효율적인 협찬 제안이 반복됨
+- 영상 시청 수익 외에 추가적인 수익화 방법이 필요함
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 브랜드 측의 협업 파트너 발굴 어려움
 
-### `npm test`
+- 팔로워 수보다 브랜드 정체성과 맞는 채널 세계관, 타깃층을 가진 크리에이터를 원함
+- 단순 검색만으로는 크리에이터의 뷰티 특성, 콘텐츠 방향, 팬층 구성을 파악하기 어려움
+- 협찬 효율을 높이기 위해 더 정교한 매칭이 필요함
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 핵심 기능
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. 매칭률 진단
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 크리에이터와 브랜드의 특성을 분석해, 협업 궁합을 수치로 제공
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. 쌍방향 제안 및 수락
 
-### `npm run eject`
+- 간편한 버튼 클릭으로 협업 제안과 수락을 자동화
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. 안전한 계약 및 결제
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 계약서 작성, 정산 등 협업 과정을 플랫폼 내에서 안전하게 관리
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 사용 기술
 
-## Learn More
+1. 프론트엔드
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 프레임워크: REACT
+- 언어: TypeScript
+- 스타일링: styled-components (CSS-in-JS)
+- 라우팅: React Router
+- API 통신: Axios, Fetch API
+- 배포: GitHub 연동 Vercel을 이용한 자동 배포
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. 백엔드
 
-### Code Splitting
+- 프레임워크: Spring Boot
+- 언어: Java
+- CI/CD 및 배포: GitHub Actions, Docker, AWS EC2
+- 데이터베이스: AWS RDS(MySQL), Redis
+- 스토리지: AWS S3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 프론트엔드
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 폴더 구조
 
-### Making a Progressive Web App
+<details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```plaintext
+📦src
+┣ 📂assets
+┃ ┣ 📂icons
+┃ ┃ ┣ 📜ActiveBriefcase.png
+┃ ┃ ┣ 📜ActiveHome.png
+┃ ┃ ┣ 📜ActiveUser.png
+┃ ┃ ┣ 📜Briefcase.png
+┃ ┃ ┣ 📜Home.png
+┃ ┃ ┗ 📜User.png
+┃ ┣ 📜AppLogo.png
+┃ ┣ 📜BackIconButton.png
+┃ ┗ 📜HomeTest.png
+┣ 📂bottom
+┃ ┣ 📜BottomBar.style.ts
+┃ ┗ 📜BottomBar.tsx
+┣ 📂business
+┃ ┣ 📂top
+┃ ┃ ┣ 📜topbar.style.ts
+┃ ┃ ┗ 📜TopBar.tsx
+┃ ┗ 📜Business.tsx
+┣ 📂data
+┃ ┗ 📜brandDummy.ts
+┣ 📂home
+┃ ┣ 📂brandBox
+┃ ┃ ┣ 📜brandBox.style.ts
+┃ ┃ ┗ 📜BrandBox.tsx
+┃ ┣ 📂brandList
+┃ ┃ ┣ 📜brandlist.style.ts
+┃ ┃ ┗ 📜BrandList.tsx
+┃ ┣ 📂desc
+┃ ┃ ┣ 📜detail.style.ts
+┃ ┃ ┣ 📜RecommendationsDetail.tsx
+┃ ┃ ┗ 📜RequestsDetail.tsx
+┃ ┣ 📂top
+┃ ┃ ┣ 📜topbar.style.ts
+┃ ┃ ┗ 📜TopBar.tsx
+┃ ┣ 📜home.style.ts
+┃ ┗ 📜Home.tsx
+┣ 📂login
+┃ ┣ 📜Login.tsx
+┃ ┣ 📜loginsignup.style.ts
+┃ ┗ 📜SignUp.tsx
+┣ 📂profile
+┃ ┗ 📜Profile.tsx
+┣ 📂test
+┃ ┣ 📂testScreen
+┃ ┃ ┣ 📜TestResult.tsx
+┃ ┃ ┣ 📜TestScreen1.tsx
+┃ ┃ ┣ 📜TestScreen2.tsx
+┃ ┃ ┗ 📜TestScreen3.tsx
+┃ ┣ 📜test.style.ts
+┃ ┣ 📜Test.tsx
+┃ ┗ 📜TestProgress.tsx
+┣ 📜App.css
+┣ 📜App.test.js
+┣ 📜App.tsx
+┣ 📜custom.d.ts
+┣ 📜GlobalStyle.ts
+┣ 📜index.css
+┣ 📜index.js
+┣ 📜logo.svg
+┣ 📜reportWebVitals.js
+┗ 📜setupTests.js
+</details>
 
-### Advanced Configuration
+### API 연동
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. 로그인/회원가입
 
-### Deployment
+- POST https://team4real.r-e.kr/auth/login
+- POST https://team4real.r-e.kr/auth/signup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. 상단바 탭 별 브랜드 리스트 (홈화면)
 
-### `npm run build` fails to minify
+- 사용자가 선택한 상단바 탭(추천 매칭/받은 요청)에 따라 if문으로 각각의 API 호출
+- GET https://team4real.r-e.kr/creators/matchings/recommendations
+- GET https://team4real.r-e.kr/creators/matchings/requests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. 테스트 진행 및 결과
+
+- POST https://team4real.r-e.kr/creators/analysis
+- GET https://team4real.r-e.kr/creators/analysis
+
+### 화면 구현
+
+![RealMuse Vercel 배포](assets/ReadMe/화면구현1.png)
+![회원가입 & 로그인 후 홈 화면 진입](assets/ReadMe/화면구현2.png)
+![매칭률 검사 진행 후 홈 반영](assets/ReadMe/화면구현3.png)
+![매칭/요청 브랜드 리스트](assets/ReadMe/화면구현4.png)
+```

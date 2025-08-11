@@ -28,9 +28,9 @@ const BrandList: React.FC<BrandList> = ({ topBarButtonType }) => {
       let url = ``;
 
       if (topBarButtonType === "RECOMMENDATIONS") {
-        url = `https://team4real.r-e.kr/creators/matchings/recommendations`;
+        url = `${process.env.REACT_APP_BACKEND_URL}/creators/matchings/recommendations`;
       } else if (topBarButtonType === "REQUESTS") {
-        url = `https://team4real.r-e.kr/creators/matchings/requests`;
+        url = `${process.env.REACT_APP_BACKEND_URL}/creators/matchings/requests`;
       }
 
       try {
